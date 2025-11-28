@@ -1,0 +1,20 @@
+SYSTEM = Si16
+ISYM   = 0        ! no symmetry imposed
+
+! MD
+IBRION = 0        ! MD (treat ionic dgr of freedom)
+NSW    = 10000    ! no of ionic steps
+POTIM  = 2.0      ! MD time step in fs
+
+MDALGO = 3                ! Langevin thermostat
+LANGEVIN_GAMMA   = 1      ! friction
+LANGEVIN_GAMMA_L = 10     ! lattice friction
+PMASS  = 10               ! lattice mass
+TEBEG  = 200              ! temperature
+
+ISIF   = 3        ! update positions, cell shape and volume 
+
+! machine learning
+ML_LMLFF  = T
+ML_MODE   = run
+
