@@ -2,4 +2,7 @@
 Quantum Computational Activity Repository
 
 ## PBL-01
-Calcular o $\Delta E$ e $\Delta H$ de adsorção para os reagentes e produtos de uma das reações participantes no processo de water gas shift catalizada por Pt111.
+Calculate the $\Delta E$ and $\Delta H$ of adsorption for the reactants and products involved in one of the pathway reactions of the water gas shift reaction catalyzed by Pt111.
+
+## FinalWork
+Development of a Machine Learning Force Field for Iβ Cellulose using VASP and ASE.
