@@ -1,11 +1,17 @@
 ============================================ COMPILING VASP FOR MLFF ============================================
 
+There's some issue with the VASP compilation with my local machine
+Veryfying the bashrc file: nano ~/.bashrc
 
+Changed these 2 flags and aparently solved (Proposed by ChatGPT)
+
+MKLLIBS   = -lmkl_intel_lp64 -lmkl_intel_thread -lmkl_core -pgf90libs -lpthread -lm -ldl
+LLIBS_MKL = -L$(MKLROOT)/lib -lmkl_scalapack_lp64 -lmkl_blacs_openmpi_lp64 $(MKLLIBS)
 
 ============================================ END COMPILING VASP FOR MLFF ============================================
 
-============================================ COMPILING VASP FOR MLFF ============================================
+============================================ RUNNING VASP ON TERMINAL ============================================
 
+mpirun -np 1 vasp_std_gpu_mlff
 
-
-============================================ END COMPILING VASP FOR MLFF ============================================
+============================================ END RUNNING VASP ON TERMINAL ============================================
