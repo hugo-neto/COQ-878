@@ -1,0 +1,21 @@
+# molecular dynamics (MD)
+IBRION = 0     # switch on MD
+NSW    = 2000  # number of MD steps
+POTIM  = 2.0   # time step in fs
+
+# NVT ensemble
+MDALGO = 3               # Langevin thermostat
+TEBEG  = 450             # temperature
+LANGEVIN_GAMMA = 0.1 0.1 # friction coefficients
+ISIF   = 2               # const. volume
+
+RANDOM_SEED = 10 0 0
+
+# production run
+ML_LMLFF = .TRUE.
+ML_MODE  = RUN
+ML_OUTPUT_MODE = 1 # Ensures that PCDAT is printed
+
+# Misc
+KPACING   = 300
+ISYM = -1

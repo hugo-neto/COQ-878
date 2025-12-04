@@ -15,4 +15,12 @@ LLIBS_MKL = -L$(MKLROOT)/lib -lmkl_scalapack_lp64 -lmkl_blacs_openmpi_lp64 $(MKL
 On therminal:
 mpirun -np 1 vasp_std_gpu_mlff
 
-============================================ END RUNNING VASP ============================================
+============================================ END RUNNING VASP ===========================================
+
+============================================ CONDA ENVIRONMENT ============================================
+
+# After activating your conda environment with (conda activate <NAME_ENV>)
+conda install -c conda-forge mdtraj
+pip install py4vasp
+
+============================================ END CONDA ENVIRONMENT ===========================================

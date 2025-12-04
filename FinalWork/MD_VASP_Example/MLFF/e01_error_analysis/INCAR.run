@@ -1,0 +1,3 @@
+IBRION   = -1   # no ionic update (default)
+ML_LMLFF = TRUE
+ML_MODE  = run

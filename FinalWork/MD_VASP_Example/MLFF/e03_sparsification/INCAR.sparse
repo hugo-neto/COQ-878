@@ -1,0 +1,8 @@
+ML_LMLFF  = True
+ML_MODE   = refit
+ML_RCUT1  = 13.0
+
+ML_LSPARSDES     = True
+ML_RDES_SPARSDES = 0.5
+
+KPACING   = 300
