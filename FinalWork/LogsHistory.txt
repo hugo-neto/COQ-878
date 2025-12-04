@@ -12,6 +12,19 @@ LLIBS_MKL = -L$(MKLROOT)/lib -lmkl_scalapack_lp64 -lmkl_blacs_openmpi_lp64 $(MKL
 
 ============================================ RUNNING VASP ============================================
 
+# 1 - Training the MLFF from scratch
+## 1.1 - Necessary files (from VASP example)
+ICONST - NOT USED
+Constrains for each bonds.
+KPOINTS - OK
+Parameters to specifie the Bloch vectors (k points) used to sample the Brillouin zone
+POSCAR - OK
+Initial position of your system (from your geometry optimization)
+POTCAR - OK
+File containing psceutopotentials for "C", "O" and "H"
+INCAR - OK
+Input parameters for the simulation
+
 On therminal:
 mpirun -np 1 vasp_std_gpu_mlff
 
