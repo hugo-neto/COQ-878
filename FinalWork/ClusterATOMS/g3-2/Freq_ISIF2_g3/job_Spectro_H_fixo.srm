@@ -1,0 +1,42 @@
+#!/bin/bash
+#SBATCH --job-name=freq1             # Job name
+#SBATCH --output=job_out_freq1.txt   # Output file
+#SBATCH --error=job_error_freq1.txt  # Error file
+#SBATCH --ntasks=1              # Number of tasks (1 task per job)
+#SBATCH --cpus-per-task=2       # Number of CPU threads per task
+#SBATCH --gpus=1
+#SBATCH --mem=30G
+
+# export paths for nvidia-sdk
+source /home/public755/Modules/nvidia/nvhpc/24.5/nvhpcrc
+
+# export paths for hdf5
+source /home/public755/Modules/hdf5/nvc_24.5/hdf5rc
+
+#export paths for intel-oneapi
+source /home/public755/Modules/intel/oneapi/2023/mklrc
+
+#export path for vasp binaries
+export PATH=/home/public/Programs/vasp.6.5.1/bin/:$PATH
+
+#activate miniconda base environemt
+eval "$(/home/$USER/miniconda3/bin/conda shell.bash hook)"
+#activate miniconda environment
+conda activate quantum
+
+# #SECTION3 : setup time and run your commands
+# Setup time
+t1=$(date +%s)
+
+# Run your commands
+
+python3 Spectro_H_fixo_ISIF_2.py
+
+# Print elapsed time (goes to job_output.txt)
+t2=$(date +%s)
+elapsed_seconds=$((t2 - t1))
+days=$((elapsed_seconds / 86400))
+hours=$(( (elapsed_seconds % 86400) / 3600 ))
+minutes=$(( (elapsed_seconds % 3600) / 60 ))
+seconds=$((elapsed_seconds % 60))
+echo "elapsed ${days} days, ${hours} hours, ${minutes} minutes, ${seconds} seconds"

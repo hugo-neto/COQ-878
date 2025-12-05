@@ -1,0 +1,56 @@
+SYSTEM = Iβ_cellulose
+ISYM   = 0        ! no symmetry imposed
+
+! ab initio
+PREC   = Normal
+IVDW   = 12
+
+ISMEAR =  0   ! Gaussian smearing
+SIGMA  = 0.05 ! smearing in eV
+
+ENCUT  = 450
+EDIFF  = 1e-6
+
+ALGO = Fast
+GGA  = PE ! Perdew-Burke-Ernzerhof (PBE)
+
+ISTART = 0 ! determines whether (1) or not (0) to read the WAVECAR file
+LWAVE  = F
+LCHARG = F
+LREAL  = Auto
+
+
+! ================= MD =================
+
+IBRION = 0        ! MD (treat ionic degrees of freedom)
+NSW    = 10000    ! no of ionic steps
+POTIM  = 0.5      ! MD time step in fs
+
+! Thermostat type and range
+! *********** (NpT) ***********
+! MDALGO = 3                ! Langevin thermostat (NVT, NpT, NpH)
+! LANGEVIN_GAMMA   = 1      ! friction
+! LANGEVIN_GAMMA_L = 10     ! lattice friction
+! PMASS  = 10               ! lattice mass
+! TEBEG  = 300              ! Temperature begin
+! TEEND  = 300              ! Temperature end
+! 
+! ISIF   = 3                ! (ISIF=3 for (NpT))
+
+! *********** (NVT) ***********
+MDALGO = 4                  ! Nosé-Hoover chain thermostat
+ISIF   = 2                  ! (ISIF=2 for (NVT))
+
+! ================= END MD =================
+
+
+! ================= ML =================
+
+ML_LMLFF  = T
+ML_MODE   = train
+! ML_NMDINT & ML_CTIFOR & ML_CDOUB control how often DFT is done or skipped
+ML_CTIFOR = 0.00002 ! Default is 0.002 if ML_CALGO = 0 (ML_CALGO = 0 is the dafault)
+
+RANDOM_SEED =         688344966                0                0
+
+! ================= END ML =================

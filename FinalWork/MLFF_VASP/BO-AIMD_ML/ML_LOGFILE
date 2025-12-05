@@ -1,0 +1,33 @@
+ML_LOGFILE 0.2.4
+ 
+ 
+* MEMORY INFORMATION ***********************************************************************************************************************
+ 
+Estimated memory consumption for ML force field generation (MB):
+ 
+Persistent allocations for force field        :  17158.7
+|
+|-- CMAT for basis                            :    832.3
+|-- SINV for basis                            :    138.7
+|-- FMAT for basis                            :  15850.8
+|-- DESC for basis                            :    105.8
+|-- DESC product matrix                       :     69.4
+ 
+Persistent allocations for ab initio data     :     10.5
+|
+|-- Ab initio data                            :     10.1
+|-- Ab initio data (new)                      :      0.4
+ 
+Temporary allocations for sparsification      :   5306.9
+|
+|-- SVD matrices                              :   5306.7
+ 
+Other temporary allocations                   :    528.5
+|
+|-- Descriptors                               :     46.2
+|-- Regression                                :    448.8
+|-- Prediction                                :     33.5
+ 
+Total memory consumption                      :  23212.7
+ 
+********************************************************************************************************************************************
