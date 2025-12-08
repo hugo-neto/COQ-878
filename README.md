@@ -1,6 +1,9 @@
 # COQ-878
 Quantum Computational Activity Repository
 
+## Cloning from github - SSH protocol
+git clone git@github.com:hugo-neto/COQ-878.git
+
 ## PBL-01
 Calculate the $\Delta E$ and $\Delta H$ of adsorption for the reactants and products involved in one of the pathway reactions of the water gas shift reaction catalyzed by Pt111.
 
