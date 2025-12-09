@@ -1,7 +1,7 @@
 #!/bin/bash
-#SBATCH --job-name=AIMD1             # Job name
-#SBATCH --output=job_out_AIMD1.txt   # Output file
-#SBATCH --error=job_error_AIMD1.txt  # Error file
+#SBATCH --job-name=AIMD6             # Job name
+#SBATCH --output=job_out_AIMD6.txt   # Output file
+#SBATCH --error=job_error_AIMD6.txt  # Error file
 #SBATCH --ntasks=1              # Number of tasks (1 task per job)
 #SBATCH --cpus-per-task=2       # Number of CPU threads per task
 #SBATCH --gpus=1
@@ -22,7 +22,7 @@ export PATH=/home/public755/Programs/vasp.6.5.1/bin/:$PATH
 #activate miniconda base environemt
 eval "$(/home/$USER/miniconda3/bin/conda shell.bash hook)"
 #activate miniconda environment
-conda activate quantum
+#conda activate quantum
 
 # #SECTION3 : setup time and run your commands
 # Setup time

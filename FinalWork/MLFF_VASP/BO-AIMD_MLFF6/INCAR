@@ -14,7 +14,7 @@ EDIFF  = 1e-5
 ALGO = Fast
 GGA  = PE ! Perdew-Burke-Ernzerhof (PBE)
 
-NELM = 100
+NELM = 100      ! max no of electronic steps
 
 ISTART = 0 ! determines whether (1) or not (0) to read the WAVECAR file
 LWAVE  = F
@@ -30,7 +30,6 @@ POTIM  = 0.5      ! MD time step in fs
 
 ! Thermostat type and range
 ! *********** (NpT) ***********
-! ISIF   = 3                ! (ISIF=3 for (NpT))
 ! MDALGO = 3                ! Langevin thermostat (NVT, NpT, NpH)
 ! LANGEVIN_GAMMA   = 0.1    ! friction
 ! LANGEVIN_GAMMA_L = 10     ! lattice friction
@@ -38,17 +37,17 @@ POTIM  = 0.5      ! MD time step in fs
 ! TEBEG  = 300              ! Temperature begin
 ! TEEND  = 350              ! Temperature end
 ! 
+! ISIF   = 3                ! (ISIF=3 for (NpT))
 
 ! *********** (NVT) ***********
-ISIF   = 2                  ! (ISIF=2 for (NVT))
+MDALGO = 3                  ! Langevin thermostat (NVT, NpT, NpH)
+LANGEVIN_GAMMA   = 100 100 100    ! friction (1/ps) (for all atom types (array) | in MACE is in 1/fs)
+!LANGEVIN_GAMMA_L = 100     ! lattice friction (Parrinello-Rahman NpT)
+!PMASS  = 10                ! lattice mass
+TEBEG  = 300                ! Temperature begin
+!MDALGO = 4                 ! Nosé-Hoover chain thermostat
 
-MDALGO = 3                ! Langevin thermostat (NVT, NpT, NpH)
-LANGEVIN_GAMMA   = 0.1    ! friction
-! LANGEVIN_GAMMA_L = 10     ! lattice friction
-! PMASS  = 10               ! lattice mass
-TEBEG  = 300              ! Temperature begin
-TEEND  = 300              ! Temperature end
-!MDALGO = 4                  ! Nosé-Hoover chain thermostat
+ISIF   = 2                  ! (ISIF=2 for (NVT))
 
 ! ================= END MD =================
 
