@@ -47,12 +47,21 @@ Temperature ramp 300-400 <br>
 After meeting with Elvis, the best option to avoid high time consuming it is to carry out simulations using the foundation models of MACE
 
 ### MLFF5
-AIMD only (AIMD Sampling) <br>
+AIMD only (foundation models) <br>
 Ensemble (NVT) <br>
 Langevin thermostat <br>
 80.000 steps <br>
 0,5 ps / step
 Fixed Temperature in 300 K <br>
+
+### MLFF6
+AIMD + MLFF (Adaptative Sampling) <br>
+Ensemble (NVT) <br>
+Langevin thermostat <br>
+80.000 steps <br>
+0,5 ps / step
+Fixed Temperature in 300 K <br>
+Flexibilized creteria <br>
 
 ## AIMD_Cellulose_300K_Test
 Contains input file and outputs from a test simulation of cellulse in 300 K
