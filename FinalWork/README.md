@@ -43,6 +43,17 @@ Nosé-Hoover chain thermostat <br>
 12.000 steps <br>
 Temperature ramp 300-400 <br>
 
+### NOTE1
+After meeting with Elvis, the best option to avoid high time consuming it is to carry out simulations using the foundation models of MACE
+
+### MLFF5
+AIMD only (AIMD Sampling) <br>
+Ensemble (NVT) <br>
+Langevin thermostat <br>
+80.000 steps <br>
+0,5 ps / step
+Fixed Temperature in 300 K <br>
+
 ## AIMD_Cellulose_300K_Test
 Contains input file and outputs from a test simulation of cellulse in 300 K
 
