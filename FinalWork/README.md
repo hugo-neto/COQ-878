@@ -14,6 +14,8 @@ mpirun -np 1 vasp_std
 22 GB RAM <br>
 3 GB GPU <br>
 
+---
+
 ### MLFF1
 AIMD and MLFF trainning <br>
 Ensemble (NVT) <br>
