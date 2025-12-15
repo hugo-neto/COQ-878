@@ -1,20 +1,28 @@
-# 1 - Folders
+# Folders
 List of all folders
 
-## MLFF_VASP
-Contains the inputs and outputs files from the full VASP workflow
+## MLFF Folders
 
-#### Running LOCAL
-mpirun -np 1 vasp_std_gpu_mlff
+<b>NOTE:</b> The MLFF5 and MLFF6 were used to write the final work!
 
-#### Running CLUSTER
-mpirun -np 1 vasp_std
+### MLFF5 - MACE
+AIMD only (foundation models) <br>
+Ensemble (NVT) <br>
+Langevin thermostat <br>
+80.000 steps <br>
+0,5 ps / step
+Fixed Temperature in 300 K <br>
 
-#### Hardware
-22 GB RAM <br>
-3 GB GPU <br>
+### MLFF6 - VASP
+AIMD + MLFF (Adaptative Sampling) <br>
+Ensemble (NVT) <br>
+Langevin thermostat <br>
+80.000 steps <br>
+0,5 ps / step
+Fixed Temperature in 300 K <br>
+Flexibilized creteria <br>
 
----
+--- 
 
 ### MLFF1
 AIMD and MLFF trainning <br>
@@ -48,22 +56,7 @@ Temperature ramp 300-400 <br>
 ### NOTE1
 After meeting with Elvis, the best option to avoid high time consuming it is to carry out simulations using the foundation models of MACE
 
-### MLFF5
-AIMD only (foundation models) <br>
-Ensemble (NVT) <br>
-Langevin thermostat <br>
-80.000 steps <br>
-0,5 ps / step
-Fixed Temperature in 300 K <br>
-
-### MLFF6
-AIMD + MLFF (Adaptative Sampling) <br>
-Ensemble (NVT) <br>
-Langevin thermostat <br>
-80.000 steps <br>
-0,5 ps / step
-Fixed Temperature in 300 K <br>
-Flexibilized creteria <br>
+--- 
 
 ## AIMD_Cellulose_300K_Test
 Contains input file and outputs from a test simulation of cellulse in 300 K
@@ -77,15 +70,23 @@ Contains the position file of IB-Cellulose obtained in COQ-875
 ## MD_VASP_Example
 Lists all VASP examples
 
-# 2 - Training MLFF from scratch
-## 2.1 - Necessary files (from VASP example)
-ICONST - NOT USED <br>
-Constrains for each bonds.
-KPOINTS - OK <br>
-Parameters to specifie the Bloch vectors (k points) used to sample the Brillouin zone <br>
-POSCAR - OK <br>
-Initial position of your system (from your geometry optimization) <br>
-POTCAR - OK <br>
-File containing psceutopotentials for "C", "O" and "H" <br>
-INCAR - OK <br>
-Input parameters for the simulation <br>
+# Running VASP in Therminal
+Contains the inputs and outputs files from the full VASP workflow
+
+#### Running LOCAL
+```bash
+# Running VASP in therminal with GPU - Local Machine
+mpirun -np 1 vasp_std_gpu_mlff
+```
+
+#### Running CLUSTER
+```bash
+# Running VASP in therminal with GPU - Cluster
+mpirun -np 1 vasp_std
+```
+
+#### Hardware for VASP (Adaptative Sampling)
+- 22 GB RAM <br>
+- 3 GB GPU <br>
+
+---
