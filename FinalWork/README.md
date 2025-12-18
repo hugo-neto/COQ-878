@@ -1,3 +1,19 @@
+# Downloading repository
+
+```bash
+# Clone the repository
+git clone https://github.com/hugo-neto/COQ-878.git
+cd COQ-878
+```
+
+If you have a SSH key
+
+```bash
+# Clone the repository with SSH key
+git clone git@github.com:hugo-neto/COQ-878.git
+cd COQ-878
+```
+
 # Folders
 List of all folders
 
